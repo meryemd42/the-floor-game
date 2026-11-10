@@ -1,4 +1,40 @@
+
 .app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.home {
   text-align: center;
-  padding: 50px;
+}
+
+.home h1 {
+  font-size: 36px;
+}
+
+.home p {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.instructions {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.instructions li {
+  margin-bottom: 12px;
 }
