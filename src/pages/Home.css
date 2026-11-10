@@ -1,0 +1,204 @@
+/* ==================================
+   HOMEPAGE BACKGROUND
+================================== */
+
+.home-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #101f42;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      #192d57 25%,
+      transparent 25%,
+      transparent 75%,
+      #192d57 75%
+    ),
+    linear-gradient(
+      45deg,
+      #192d57 25%,
+      transparent 25%,
+      transparent 75%,
+      #192d57 75%
+    );
+
+  background-size: 240px 240px;
+  background-position: 0 0, 120px 120px;
+
+  overflow: hidden;
+}
+
+/* ==================================
+   CENTER CONTENT
+================================== */
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ==================================
+   SILVER TITLE
+================================== */
+
+.home-title {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #d5dbe5 25%,
+    #8e9aab 48%,
+    #f5f7fa 55%,
+    #a4afbf 80%,
+    #ffffff 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(3px 5px 3px rgba(0, 0, 0, 0.5));
+}
+
+/* ==================================
+   PLAY BUTTON
+================================== */
+
+.home-page .play-button {
+  padding: 12px 45px;
+
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  background: #d8dee9;
+  color: #101f42;
+
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.home-page .play-button:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ==================================
+   QUESTION MARK BUTTON
+================================== */
+
+.home-page .help-button {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  border: 2px solid #d8dee9;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #d8dee9;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.home-page .help-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==================================
+   INSTRUCTIONS POPUP
+================================== */
+
+.instructions-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.instructions-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 450px;
+  padding: 35px;
+
+  background: #172a50;
+  color: #ffffff;
+
+  border: 1px solid #7f91af;
+  border-radius: 12px;
+
+  text-align: left;
+}
+
+.instructions-modal h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.instructions-modal li {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.home-page .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  background: transparent;
+  border: none;
+  color: white;
+
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ==================================
+   SMALL SCREENS
+================================== */
+
+@media (max-width: 600px) {
+  .home-title {
+    letter-spacing: 1px;
+  }
+
+  .home-page .help-button {
+    top: 15px;
+    right: 15px;
+  }
+}

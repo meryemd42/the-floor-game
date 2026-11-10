@@ -1,0 +1,312 @@
+/* ==============================
+   DUEL PAGE BACKGROUND
+============================== */
+
+.duel-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 65px 35px 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  color: #edf2fa;
+
+  background-color: #101f42;
+  background-image:
+    linear-gradient(45deg, #192d57 25%, transparent 25%,
+      transparent 75%, #192d57 75%),
+    linear-gradient(45deg, #192d57 25%, transparent 25%,
+      transparent 75%, #192d57 75%);
+
+  background-size: 240px 240px;
+  background-position: 0 0, 120px 120px;
+}
+
+/* ==============================
+   BACK BUTTON
+============================== */
+
+.duel-page .duel-back-button {
+  position: absolute;
+  top: 18px;
+  left: 25px;
+
+  background: rgba(15, 30, 60, 0.9);
+  border: 1px solid #7187ad;
+  color: #e5ecf8;
+  padding: 8px 15px;
+}
+
+.duel-page .duel-back-button:hover {
+  background: #304b78;
+}
+
+/* ==============================
+   HEADER AND PLAYERS
+============================== */
+
+.duel-header {
+  width: 100%;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.duel-player {
+  padding: 10px;
+  border: 2px solid #52678c;
+  border-radius: 16px;
+  background: rgba(12, 26, 56, 0.92);
+  text-align: center;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.duel-player.current-player.player-one-panel {
+  border-color: #78baff;
+  box-shadow: 0 0 22px rgba(80, 155, 255, 0.45);
+}
+
+.duel-player.current-player.player-two-panel {
+  border-color: #b5a0ff;
+  box-shadow: 0 0 22px rgba(165, 120, 255, 0.45);
+}
+
+/* Override old Timer.css / App.css styling */
+.duel-page .timer {
+  border: none;
+  background: transparent;
+  color: #edf2fa;
+  padding: 10px;
+  min-width: 0;
+}
+
+.duel-page .timer h3 {
+  margin: 0 0 10px;
+  font-size: clamp(14px, 2vw, 22px);
+  overflow-wrap: anywhere;
+}
+
+.duel-page .timer p {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+/* ==============================
+   CENTER TITLE
+============================== */
+
+.duel-heading {
+  text-align: center;
+}
+
+.duel-heading p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: #b8c9e6;
+}
+
+.duel-heading h1 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3vw, 38px);
+  letter-spacing: 3px;
+  color: #e5eaf5;
+}
+
+.duel-heading span {
+  font-size: 15px;
+  color: #b5c9e9;
+}
+
+/* ==============================
+   QUESTION IMAGE
+============================== */
+
+.duel-question-area {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+}
+
+.duel-page .question-card {
+  margin: 0;
+  padding: 10px;
+  background: rgba(12, 26, 56, 0.95);
+  border: 2px solid #a8bad7;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(140, 180, 245, 0.25);
+}
+
+/* Hide the old "What is this?" heading */
+.duel-page .question-card h2 {
+  display: none;
+}
+
+.duel-page .question-card img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: clamp(220px, 38vh, 420px);
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.duel-feedback {
+  min-height: 50px;
+  margin-top: 15px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: #f2f5fb;
+  text-align: center;
+}
+
+/* Bigger text when passing */
+.duel-feedback.revealing {
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #e3ebf8;
+  text-shadow: 0 0 15px rgba(180, 210, 255, 0.5);
+}
+
+/* ==============================
+   BOTTOM CONTROL BAR
+============================== */
+
+.duel-controls {
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+
+  padding: 15px;
+  background: rgba(12, 26, 56, 0.95);
+  border: 2px solid #8ba6d0;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(120, 165, 235, 0.2);
+}
+
+.duel-answer-form {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+.duel-answer-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+
+  background: #102447;
+  border: 1px solid #8da8d2;
+  border-radius: 9px;
+
+  color: #ffffff;
+  font-size: 17px;
+  outline: none;
+}
+
+.duel-answer-form input::placeholder {
+  color: #9cafcc;
+}
+
+.duel-answer-form input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(175, 205, 255, 0.3);
+}
+
+/* ==============================
+   ACTION BUTTONS
+============================== */
+
+.duel-page .duel-submit-button {
+  background: linear-gradient(135deg, #f2f5fb, #aebed6);
+  color: #102447;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+}
+
+.duel-page .duel-pass-button {
+  background: #2a426c;
+  border: 1px solid #8fa8d0;
+  color: #edf2fa;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
+.duel-page .duel-submit-button:hover:not(:disabled) {
+  background: #ffffff;
+}
+
+.duel-page .duel-pass-button:hover:not(:disabled) {
+  background: #3c5888;
+}
+
+.duel-page button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 750px) {
+  .duel-page {
+    padding: 75px 15px 25px;
+    gap: 22px;
+  }
+
+  .duel-header {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .duel-heading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .duel-player {
+    grid-row: 2;
+  }
+
+  .duel-controls {
+    flex-direction: column;
+  }
+
+  .duel-answer-form {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 420px) {
+  .duel-answer-form {
+    flex-direction: column;
+  }
+
+  .duel-page .duel-submit-button,
+  .duel-page .duel-pass-button {
+    width: 100%;
+  }
+
+  .duel-heading p {
+    letter-spacing: 2px;
+  }
+}

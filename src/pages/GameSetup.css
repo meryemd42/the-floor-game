@@ -1,0 +1,363 @@
+/* ==============================
+   PAGE BACKGROUND
+============================== */
+
+.setup-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 55px clamp(20px, 5vw, 80px);
+  color: #e9eef8;
+
+  background-color: #101f42;
+  background-image:
+    linear-gradient(45deg, #192d57 25%, transparent 25%,
+      transparent 75%, #192d57 75%),
+    linear-gradient(45deg, #192d57 25%, transparent 25%,
+      transparent 75%, #192d57 75%);
+
+  background-size: 240px 240px;
+  background-position: 0 0, 120px 120px;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.setup-header {
+  max-width: 1250px;
+  margin: 0 auto 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.setup-eyebrow {
+  margin: 0 0 10px;
+  color: #a8b9d7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.setup-header h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  color: #edf2fa;
+}
+
+.setup-subtitle {
+  color: #b7c6df;
+  margin-top: 12px;
+}
+
+.setup-page .setup-back-button {
+  flex-shrink: 0;
+  background: rgba(19, 37, 73, 0.9);
+  border: 1px solid #6b80a5;
+  color: #e4ebf6;
+  padding: 10px 18px;
+}
+
+.setup-page .setup-back-button:hover {
+  background: #304b78;
+}
+
+/* ==============================
+   TWO-PANEL LAYOUT
+============================== */
+
+.setup-layout {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.setup-panel {
+  background: rgba(15, 31, 63, 0.96);
+  border: 1px solid #465f89;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.setup-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.setup-step {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #2b426d;
+  color: #e7eefb;
+  font-weight: 800;
+}
+
+.setup-panel-heading h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.setup-panel-heading p {
+  margin: 6px 0 0;
+  color: #aebed9;
+  font-size: 14px;
+}
+
+/* ==============================
+   CATEGORY TILES
+============================== */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.setup-page .category-tile {
+  position: relative;
+  min-height: 145px;
+  padding: 20px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  background: #203861;
+  border: 2px solid #39537f;
+  border-radius: 12px;
+  color: #e9eef8;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.setup-page .category-tile:not(:disabled):hover {
+  transform: translateY(-4px);
+  background: #2c4977;
+  border-color: #9fb5d7;
+}
+
+.setup-page .category-tile.selected {
+  background: #344e7b;
+  border-color: #e1e9f8;
+  box-shadow: 0 0 18px rgba(180, 205, 255, 0.3);
+}
+
+.category-icon {
+  font-size: 35px;
+}
+
+.category-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.category-status {
+  font-size: 11px;
+  color: #a5b5cf;
+}
+
+.category-check {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  color: #e5efff;
+  font-weight: 800;
+}
+
+.setup-page .category-tile:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.category-hint {
+  margin: 25px 0 0;
+  color: #a7b9d5;
+  font-size: 13px;
+}
+
+/* ==============================
+   PLAYER NAME FIELDS
+============================== */
+
+.player-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.player-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-field label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #cbd7eb;
+}
+
+.player-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.player-one {
+  background: #70b6ff;
+}
+
+.player-two {
+  background: #c3a0ff;
+}
+
+.player-field input {
+  width: 100%;
+  padding: 15px;
+  background: #102447;
+  border: 1px solid #526b96;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+}
+
+.player-field input::placeholder {
+  color: #8fa4c5;
+}
+
+.player-field input:focus {
+  border-color: #dce8ff;
+  box-shadow: 0 0 0 3px rgba(174, 203, 255, 0.15);
+}
+
+.versus-label {
+  text-align: center;
+  color: #aebfdd;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* ==============================
+   SUMMARY AND START BUTTON
+============================== */
+
+.setup-summary {
+  margin-top: 35px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #182f56;
+  border: 1px solid #415b84;
+  border-radius: 10px;
+}
+
+.setup-summary span {
+  color: #aebfda;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.setup-summary strong {
+  font-size: 15px;
+}
+
+.setup-page .setup-start-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+
+  background: linear-gradient(135deg, #f3f6fc, #aab9d1);
+  border: none;
+  border-radius: 9px;
+  color: #132547;
+
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.setup-page .setup-start-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(180, 205, 255, 0.35);
+}
+
+.setup-page .setup-start-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.setup-footer-note {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #a9bad6;
+  font-size: 12px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 850px) {
+  .setup-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .setup-page {
+    padding: 25px 15px;
+  }
+
+  .setup-header {
+    flex-direction: column-reverse;
+  }
+
+  .setup-panel {
+    padding: 20px 15px;
+  }
+
+  .category-grid {
+    gap: 8px;
+  }
+
+  .setup-page .category-tile {
+    min-height: 115px;
+    padding: 12px 5px;
+  }
+
+  .category-icon {
+    font-size: 27px;
+  }
+
+  .category-name {
+    font-size: 12px;
+  }
+}

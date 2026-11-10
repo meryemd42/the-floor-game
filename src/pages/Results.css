@@ -1,0 +1,259 @@
+/* ==============================
+   RESULTS PAGE BACKGROUND
+============================== */
+
+.results-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #edf2fa;
+
+  background-color: #101f42;
+  background-image:
+    linear-gradient(
+      45deg,
+      #192d57 25%,
+      transparent 25%,
+      transparent 75%,
+      #192d57 75%
+    ),
+    linear-gradient(
+      45deg,
+      #192d57 25%,
+      transparent 25%,
+      transparent 75%,
+      #192d57 75%
+    );
+
+  background-size: 240px 240px;
+  background-position: 0 0, 120px 120px;
+}
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.results-content {
+  width: 100%;
+  max-width: 650px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 45px 30px;
+
+  background: rgba(12, 26, 56, 0.94);
+  border: 2px solid #738bb4;
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 35px rgba(140, 180, 255, 0.2),
+    0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================
+   BRAND NAME
+============================== */
+
+.results-brand {
+  margin: 0 0 35px;
+
+  color: #b9c9e4;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+/* ==============================
+   TROPHY
+============================== */
+
+.results-trophy {
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #1d355f;
+  border: 2px solid #a6b9d9;
+  border-radius: 50%;
+
+  color: #dce6f5;
+
+  box-shadow: 0 0 30px rgba(160, 195, 255, 0.25);
+
+  animation: trophy-appear 0.8s ease-out;
+}
+
+.results-trophy svg {
+  width: 65px;
+  height: 65px;
+}
+
+@keyframes trophy-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==============================
+   WINNER ANNOUNCEMENT
+============================== */
+
+.results-label {
+  margin: 30px 0 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  color: #b5c8e5;
+}
+
+.results-winner {
+  margin: 0;
+
+  max-width: 100%;
+  overflow-wrap: anywhere;
+
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #d4deed 30%,
+    #8d9fb9 55%,
+    #f1f5fb 75%,
+    #b1bfd4
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 0 12px rgba(190, 215, 255, 0.35));
+}
+
+.results-wins {
+  margin: 5px 0 0;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 6px;
+
+  color: #d6e2f3;
+}
+
+/* ==============================
+   DIVIDER AND MESSAGE
+============================== */
+
+.results-divider {
+  width: 65%;
+  height: 2px;
+  margin: 28px 0 20px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #a5b9da,
+    transparent
+  );
+}
+
+.results-message {
+  margin: 0 0 30px;
+  color: #aebfdb;
+  font-size: 16px;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.results-page .results-rematch-button,
+.results-page .results-home-button {
+  padding: 14px 25px;
+  min-width: 170px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.results-page .results-rematch-button {
+  background: linear-gradient(135deg, #f3f6fc, #acbdd6);
+  color: #102447;
+  border: none;
+}
+
+.results-page .results-home-button {
+  background: #243d68;
+  color: #eaf0fa;
+  border: 1px solid #8ba4ca;
+}
+
+.results-page .results-rematch-button:hover,
+.results-page .results-home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(160, 195, 255, 0.3);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 500px) {
+  .results-content {
+    padding: 35px 20px;
+  }
+
+  .results-brand {
+    letter-spacing: 3px;
+  }
+
+  .results-actions {
+    flex-direction: column;
+  }
+
+  .results-page .results-rematch-button,
+  .results-page .results-home-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .results-trophy {
+    animation: none;
+  }
+}

@@ -10,24 +10,35 @@ function App() {
   const [gameSettings, setGameSettings] = useState(null)
   const [winner, setWinner] = useState('')
 
+  // Go to game setup
   function startSetup() {
     setCurrentPage('setup')
   }
 
+  // Start a new duel
   function startDuel(settings) {
     setGameSettings(settings)
     setWinner('')
     setCurrentPage('duel')
   }
 
+  // End the duel and show the winner
   function handleGameOver(winningPlayer) {
     setWinner(winningPlayer)
     setCurrentPage('results')
   }
 
-  function handleRematch() {
+  // Play again with the same players and category
+  function handlePlayAgain() {
     setWinner('')
     setCurrentPage('duel')
+  }
+
+  // Return to the homepage
+  function handleHome() {
+    setWinner('')
+    setGameSettings(null)
+    setCurrentPage('home')
   }
 
   return (
@@ -54,8 +65,8 @@ function App() {
       {currentPage === 'results' && (
         <Results
           winner={winner}
-          onRematch={handleRematch}
-          onHome={() => setCurrentPage('home')}
+          onPlayAgain={handlePlayAgain}
+          onHome={handleHome}
         />
       )}
     </div>

@@ -1,7 +1,6 @@
 .app {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .home {
@@ -150,4 +149,18 @@ button:hover {
 
 .results button {
   margin: 10px;
+}
+
+.pass-button {
+  background-color: #d97706;
+  margin: 10px;
+}
+
+.pass-button:hover {
+  background-color: #b45309;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
