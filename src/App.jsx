@@ -1,27 +1,49 @@
+
 import { useState } from 'react'
-import Home from './pages/Home'
+import Home from './pages/Home.jsx'
+import GameSetup from './pages/GameSetup.jsx'
 import './App.css'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [gameSettings, setGameSettings] = useState(null)
 
-  function startGame() {
+  function startSetup() {
     setCurrentPage('setup')
+  }
+
+  function startDuel(settings) {
+    setGameSettings(settings)
+    setCurrentPage('duel')
   }
 
   return (
     <div className="app">
       {currentPage === 'home' && (
-        <Home onPlay={startGame} />
+        <Home onPlay={startSetup} />
       )}
 
       {currentPage === 'setup' && (
-        <div>
-          <h1>Game Setup</h1>
-          <p>This page is coming next!</p>
+        <GameSetup
+          onStart={startDuel}
+          onBack={() => setCurrentPage('home')}
+        />
+      )}
 
-          <button onClick={() => setCurrentPage('home')}>
-            Back to Home
+      {currentPage === 'duel' && gameSettings && (
+        <div>
+          <h1>Duel Screen</h1>
+
+          <p>
+            {gameSettings.player1} vs {gameSettings.player2}
+          </p>
+
+          <p>Category: {gameSettings.category}</p>
+
+          <p>The game will be implemented next!</p>
+
+          <button onClick={() => setCurrentPage('setup')}>
+            Back to Setup
           </button>
         </div>
       )}
@@ -30,3 +52,4 @@ function App() {
 }
 
 export default App
+
