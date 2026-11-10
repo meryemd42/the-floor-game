@@ -1,8 +1,8 @@
-
 import { useState } from 'react'
 import Home from './pages/Home.jsx'
 import GameSetup from './pages/GameSetup.jsx'
 import './App.css'
+import Duel from './pages/Duel.jsx'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -31,21 +31,10 @@ function App() {
       )}
 
       {currentPage === 'duel' && gameSettings && (
-        <div>
-          <h1>Duel Screen</h1>
-
-          <p>
-            {gameSettings.player1} vs {gameSettings.player2}
-          </p>
-
-          <p>Category: {gameSettings.category}</p>
-
-          <p>The game will be implemented next!</p>
-
-          <button onClick={() => setCurrentPage('setup')}>
-            Back to Setup
-          </button>
-        </div>
+        <Duel
+          gameSettings={gameSettings}
+          onBack={() => setCurrentPage('setup')}
+        />
       )}
     </div>
   )

@@ -76,3 +76,23 @@ button:hover {
   display: block;
   margin: 20px auto;
 }
+
+.duel {
+  text-align: center;
+}
+
+.question-card {
+  margin: 30px auto;
+}
+
+.question-card img {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.duel button {
+  margin-top: 20px;
+}
